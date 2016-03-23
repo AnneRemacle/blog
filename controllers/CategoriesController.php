@@ -27,7 +27,7 @@
             if( !isset( $_GET[ 'id' ] ) ) {
                 die( 'Il manque l’identifiant de la catégorie' );
             }
-            $id = intval( $_GET[ 'with' ] );
+            $id = intval( $_GET[ 'id' ] );
             $category = $this -> categories_model -> find( $id );
             $comments = null;
             $posts = null;
@@ -50,6 +50,4 @@
                 ];
 
             }
-
-
         }
