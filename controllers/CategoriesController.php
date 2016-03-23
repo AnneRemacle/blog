@@ -32,14 +32,17 @@
                     $posts_model = new Posts();
                     $posts = $posts_model -> getPostsByCategoryId( $category -> id );
                 }
+
+                $view = 'showCategories.php';
+                return [
+                    'category' => $category,
+                    'view' => $view,
+                    'page_title' => 'Tous les articles de la catégorie ' . $category->name,
+                    'comments' => $comments,
+                    'posts' => $posts
+                ];
+
             }
 
-            $view = 'showCategories.php';
-            return [
-                'categories' => $category,
-                'view' => $view,
-                'page_title' => 'Tous les articles de la catégorie ' . $category->name,
-                'comments' => $comments
-            ];
+
         }
-    }

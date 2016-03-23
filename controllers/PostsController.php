@@ -42,7 +42,8 @@
             return [
                 'comments' => $comments,
                 'view' => $view,
-                'page_title' => 'Page de l’article ' . $post->title
+                'page_title' => 'Page de l’article ' . $post->title,
+                'post' => $post
             ];
         }
     }

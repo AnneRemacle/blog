@@ -15,6 +15,9 @@
                 <a href="?a=show&e=comments&id=<?php echo $comment -> id; ?>&with=posts">
                     <?php echo $comment -> author_name; ?>
                 </a>
+                <p>
+                    <?php echo $comment -> body; ?>
+                </p>
             </li>
         <?php endforeach; ?>
     </ul>

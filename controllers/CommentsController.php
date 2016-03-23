@@ -25,12 +25,11 @@
             if( !isset( $_GET[ 'id' ] ) ) {
                 die( 'Il manque l’identifiant' );
             }
-            $id = intval( $_GET[ 'with' ] ) {
-                $with = explode( ',', $_GET[ 'with' ] );
-                if( in_array( 'comments', $with ) ) {
+            $id = intval( $_GET[ 'with' ] );
+            $with = explode( ',', $_GET[ 'with' ] );
+            if( in_array( 'comments', $with ) ) {
                     $comments_model = new Posts();
                     $comments = $comments_model -> getCommentsByPostId( $category -> id );
-                }
             }
 
             $view = 'showComments.php';
@@ -40,5 +39,5 @@
                 'page_title' => 'Tous les commentaires de l’article ' . $post->title,
                 'comments' => $comments
             ];
+            }
         }
-    }
