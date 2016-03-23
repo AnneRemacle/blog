@@ -26,18 +26,26 @@
                 die( 'Il manque l’identifiant' );
             }
             $id = intval( $_GET[ 'with' ] );
-            $with = explode( ',', $_GET[ 'with' ] );
-            if( in_array( 'comments', $with ) ) {
-                    $comments_model = new Posts();
+            $comment = $this -> comments_model -> find( $id );
+            $comments = null;
+            $post = null;
+
+            if( isset( $_GET[ 'with' ] ) ) {
+                $with = explode( ',', $_GET[ 'with' ] );
+                if( in_array( 'comments', $with ) ) {
+                    $comments_model = new Comments();
                     $comments = $comments_model -> getCommentsByPostId( $category -> id );
+            }
             }
 
             $view = 'showComments.php';
             return [
                 'comments' => $comment,
+                'post' => $post,
                 'view' => $view,
                 'page_title' => 'Tous les commentaires de l’article ' . $post->title,
                 'comments' => $comments
             ];
-            }
+
         }
+    }

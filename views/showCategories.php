@@ -6,7 +6,7 @@
     <ul class="posts">
         <?php foreach( $datas[ 'posts' ] as $post ): ?>
             <li class="post">
-                <a href="?a=show&e=posts&id=<?php echo $post -> id; ?>&with=comments">
+                <a href="?a=show&e=categories&id=<?php echo $post -> id; ?>&with=posts">
                     <?php echo $post -> title; ?>
                 </a>
             </li>

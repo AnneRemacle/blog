@@ -33,7 +33,7 @@
             if( isset( $_GET[ 'with' ] ) ) {
                 $with = explode( ',', $_GET[ 'with' ] );
                 if( in_array( 'comments', $with ) ) {
-                    $comments_model = new Posts();
+                    $comments_model = new Comments();
                     $comments = $comments_model -> getCommentsByPostId( $post -> id );
                 }
             }

@@ -1,9 +1,9 @@
 
-<h1><?php echo $datas[ 'comment' ] -> author_name; ?></h1>
+<h1><?php echo $datas[ 'comments' ] -> author_name; ?></h1>
 
-<?php if( $datas[ 'comment' ] -> body ): ?>
+<?php if( $datas[ 'comments' ] -> body ): ?>
     <div class="body">
-        <?php echo $datas[ 'comment' ] -> body; ?>
+        <?php echo $datas[ 'comments' ] -> body; ?>
     </div>
 <?php endif; ?>
 

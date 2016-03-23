@@ -3,6 +3,7 @@
 
     use Model\Categories;
     use Model\Posts;
+    use Model\Comments;
 
     class CategoriesController {
         private $categories_model = null;
@@ -27,17 +28,23 @@
                 die( 'Il manque l’identifiant de la catégorie' );
             }
             $id = intval( $_GET[ 'with' ] );
-            $with = explode( ',', $_GET[ 'with' ] );
+            $category = $this -> categories_model -> find( $id );
+            $comments = null;
+            $posts = null;
+
+            if( isset( $_GET[ 'with' ] ) ) {
+                $with = explode( ',', $_GET[ 'with' ] );
                 if( in_array( 'categories', $with ) ) {
                     $posts_model = new Posts();
                     $posts = $posts_model -> getPostsByCategoryId( $category -> id );
                 }
+            }
 
                 $view = 'showCategories.php';
                 return [
                     'category' => $category,
                     'view' => $view,
-                    'page_title' => 'Tous les articles de la catégorie ' . $category->name,
+                    'page_title' => 'Tous les articles de la catégorie ' . $category -> name,
                     'comments' => $comments,
                     'posts' => $posts
                 ];
