@@ -25,7 +25,7 @@
             if( !isset( $_GET[ 'id' ] ) ) {
                 die( 'Il manque l’identifiant' );
             }
-            $id = intval( $_GET[ 'with' ] );
+            $id = intval( $_GET[ 'id' ] );
             $comment = $this -> comments_model -> find( $id );
             $comments = null;
             $post = null;
@@ -43,7 +43,7 @@
                 'comments' => $comment,
                 'post' => $post,
                 'view' => $view,
-                'page_title' => 'Tous les commentaires de l’article ' . $post->title,
+                'page_title' => 'Tous les commentaires de l’article ' . $post-> title,
                 'comments' => $comments
             ];
 

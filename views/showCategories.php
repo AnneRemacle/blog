@@ -1,9 +1,7 @@
 
-<h1><?php echo $datas[ 'category' ] -> name; ?></h1>
-
-<h2>Articles de cette catégorie</h2>
+<h1>Articles de la catégorie <?php echo $datas[ 'category' ] -> name; ?></h1>
 <?php if( $datas[ 'posts' ] ): ?>
-    <?php var_dump( $datas['posts'] ); ?>
+
     <ul class="posts">
         <?php foreach( $datas[ 'posts' ] as $post ): ?>
             <li class="post">
@@ -17,5 +15,5 @@
 
 
 <div>
-    <a href="index.php?a=index&e=categories">Toutes les catégories</a>
+    <a class="back" href="index.php?a=index&e=categories">Toutes les catégories</a>
 </div>

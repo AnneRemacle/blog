@@ -1,5 +1,5 @@
 
-<h1><?php echo $datas[ 'comments' ] -> author_name; ?></h1>
+<h1 class="hidden"><?php echo $datas[ 'comments' ] -> author_name; ?></h1>
 
 <?php if( $datas[ 'comments' ] -> body ): ?>
     <div class="body">

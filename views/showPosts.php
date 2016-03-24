@@ -11,7 +11,7 @@
 <?php if( $datas[ 'comments' ] ): ?>
     <ul class="comments">
         <?php foreach( $datas[ 'comments' ] as $comment ): ?>
-            <li class="book">
+            <li class="comment">
                 <a href="?a=show&e=comments&id=<?php echo $comment -> id; ?>&with=posts">
                     <?php echo $comment -> author_name; ?>
                 </a>
@@ -24,5 +24,5 @@
 <?php endif; ?>
 
 <div>
-    <a href="index.php?a=index&e=posts">Tous les articles</a>
+    <a class="back" href="index.php?a=index&e=posts">Tous les articles</a>
 </div>

@@ -11,10 +11,10 @@
                     JOIN categories ON categories.id = posts.category_id
                     WHERE categories.id = :id';
 
-            $dpoSt = $this -> cn -> prepare( $sql);
+            $pdoSt = $this -> cn -> prepare( $sql);
             $pdoSt -> execute( [ ':id' => $id ] );
             return $pdoSt -> fetchAll();
         }
 
-        
+
     }
